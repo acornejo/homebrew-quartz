@@ -17,7 +17,7 @@ class PopplerQuartz < Formula
   depends_on 'glib'
   depends_on 'qt' if qt?
 
-  depends_on 'acornejo/cairo-quartz' => :alt
+  depends_on 'acornejo/quartz/cairo-quartz' => :alt
 
   keg_only 'This formula builds Poppler for use with Quartz instead of X11, which is experimental.'
 
@@ -28,8 +28,6 @@ class PopplerQuartz < Formula
   end
 
   def install
-    ENV.x11 # For Fontconfig headers
-
     if qt?
       ENV['POPPLER_QT4_CFLAGS'] = `#{HOMEBREW_PREFIX}/bin/pkg-config QtCore QtGui --libs`.chomp
       ENV.append 'LDFLAGS', "-Wl,-F#{HOMEBREW_PREFIX}/lib"

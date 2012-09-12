@@ -5,9 +5,11 @@ class LibrsvgQuartz < Formula
   homepage 'http://librsvg.sourceforge.net/'
   md5 '3bf6472d65e15cd13230f886da88e913'
 
+  depends_on 'pkg-config'
   depends_on 'libcroco'
-
-  depends_on 'acornejo/gtk+-quartz' => :alt
+  depends_on 'xz'
+  depends_on 'acornejo/quartz/pango-quartz' => :alt
+  depends_on 'acornejo/quartz/gtk+-quartz' => :alt
 
   keg_only 'This formula builds LibRSVG for use with Quartz instead of X11, which is experimental.'
 

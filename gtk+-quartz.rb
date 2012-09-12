@@ -2,8 +2,8 @@ require 'formula'
 
 class GtkxQuartz < Formula
   homepage 'http://www.gtk.org/'
-  url 'http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-2.24.6.tar.bz2'
-  sha256 '6f45bdbf9ea27eb3b5f977d7ee2365dede0d0ce454985680c26e5210163bbf37'
+  url 'http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-2.24.11.tar.xz'
+  sha256 '328b4ea19a61040145e777e2ac49820968a382ac8581a380c9429897881812a9' 
 
   depends_on 'pkg-config' => :build
   depends_on 'glib'
@@ -13,7 +13,7 @@ class GtkxQuartz < Formula
   depends_on 'jasper' => :optional
   depends_on 'atk' => :optional
 
-  depends_on 'acornejo/pango-quartz' => :alt
+  depends_on 'acornejo/quartz/pango-quartz' => :alt
 
   keg_only 'This formula builds Gtk+ for use with Quartz instead of X11, which is experimental.'
 
