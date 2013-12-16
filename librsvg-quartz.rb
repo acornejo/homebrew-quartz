@@ -8,8 +8,8 @@ class LibrsvgQuartz < Formula
   depends_on 'pkg-config'
   depends_on 'libcroco'
   depends_on 'xz'
-  depends_on 'acornejo/quartz/pango-quartz' => :alt
-  depends_on 'acornejo/quartz/gtk+-quartz' => :alt
+  depends_on 'acornejo/quartz/pango-quartz'
+  depends_on 'acornejo/quartz/gtk+-quartz'
 
   keg_only 'This formula builds LibRSVG for use with Quartz instead of X11, which is experimental.'
 

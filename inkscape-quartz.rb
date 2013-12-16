@@ -15,9 +15,9 @@ class InkscapeQuartz < Formula
   depends_on 'libwpg'
   depends_on 'popt'
 
-  depends_on 'acornejo/quartz/gtkmm-quartz' => :alt
-  depends_on 'acornejo/quartz/librsvg-quartz' => :alt
-  depends_on 'acornejo/quartz/poppler-quartz' => :alt
+  depends_on 'acornejo/quartz/gtkmm-quartz'
+  depends_on 'acornejo/quartz/librsvg-quartz'
+  depends_on 'acornejo/quartz/poppler-quartz'
 
   def patches
       # fixes glib issues, png issues, clang issues, configure gcc bug & makefile --enable-dynamic flag

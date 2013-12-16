@@ -10,7 +10,7 @@ class PangoQuartz < Formula
   depends_on 'glib'
   depends_on 'fontconfig' if MacOS.leopard? # Leopard's fontconfig is too old.
 
-  depends_on 'acornejo/quartz/cairo-quartz' => :alt
+  depends_on 'acornejo/quartz/cairo-quartz'
 
   keg_only 'This formula builds Pango for use with Quartz instead of X11, which is experimental.'
 

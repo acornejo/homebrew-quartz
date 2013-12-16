@@ -9,8 +9,8 @@ class GtkmmQuartz < Formula
   depends_on 'glibmm'
   depends_on 'libsigc++'
 
-  depends_on 'acornejo/quartz/gtk+-quartz' => :alt
-  depends_on 'acornejo/quartz/pangomm-quartz' => :alt
+  depends_on 'acornejo/quartz/gtk+-quartz'
+  depends_on 'acornejo/quartz/pangomm-quartz'
 
   keg_only 'This formula builds GtkMM for use with Quartz instead of X11, which is experimental.'
 
