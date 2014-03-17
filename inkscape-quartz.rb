@@ -6,6 +6,9 @@ class InkscapeQuartz < Formula
   md5 'f60b98013bd1121b2cc301f3485076ba'
 
   # Inkscape is a meaty bastard.
+  depends_on 'pkg-config' => :build
+  depends_on 'intltool' => :build
+  depends_on 'boost-build' => :build
   depends_on :x11
   depends_on 'boehmgc'
   depends_on 'boost'
@@ -15,6 +18,8 @@ class InkscapeQuartz < Formula
   depends_on 'libwpg'
   depends_on 'popt'
 
+  depends_on 'acornejo/quartz/cairomm-quartz'
+  depends_on 'acornejo/quartz/pango-quartz'
   depends_on 'acornejo/quartz/gtkmm-quartz'
   depends_on 'acornejo/quartz/librsvg-quartz'
   depends_on 'acornejo/quartz/poppler-quartz'
@@ -27,8 +32,8 @@ class InkscapeQuartz < Formula
   def install
     ENV.x11
     ENV.prepend 'CXXFLAGS', '-std=c++11'
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    args = ["--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"]
+    system "./configure", *args
     system "make install"
   end
 end
