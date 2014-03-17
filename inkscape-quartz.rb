@@ -26,6 +26,7 @@ class InkscapeQuartz < Formula
 
   def install
     ENV.x11
+    ENV.prepend 'CXXFLAGS', '-std=c++11'
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make install"
