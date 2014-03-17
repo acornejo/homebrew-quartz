@@ -24,7 +24,7 @@ class InkscapeQuartz < Formula
   depends_on 'acornejo/quartz/librsvg-quartz'
   depends_on 'acornejo/quartz/poppler-quartz'
   
-  fails_on :clang
+  fails_with :clang
 
   def patches
       # fixes glib issues, png issues, clang issues, configure gcc bug & makefile --enable-dynamic flag
