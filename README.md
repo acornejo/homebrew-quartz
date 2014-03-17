@@ -1,8 +1,16 @@
 Homebrew-quartz
 ============
-This repository contains a few gnu tools compiled for quartz. Its based on the work of Sharpie, but with significant patches on inkscape to make it work for Mountain Lion.
+This repository contains a few gnu tools compiled for quartz. Its based
+on the work of Sharpie, but with significant patches on inkscape to make
+it work for Mountain Lion.
 
-The main tool here is inkscape, which will run natively (i.e. will not run inside X11 or XQuartz, but directly using GTK Quartz backend).
+The main tool here is inkscape, which will run natively (i.e. will not
+run inside X11 or XQuartz, but directly using GTK Quartz
+backend).
+
+This is the bleeding edge version of inkscape (0.91), since the stable
+version (0.48) has problems which prevent it from compiling using clang
+(and therefore require you to build gcc).
 
 Installing Quartz Formulas
 --------------------------
