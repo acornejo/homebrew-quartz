@@ -11,7 +11,7 @@ class GtkxQuartz < Formula
   depends_on 'libtiff'
   depends_on 'gdk-pixbuf'
   depends_on 'jasper' => :optional
-  depends_on 'atk' => :optional
+  depends_on 'atk'
 
   depends_on 'acornejo/quartz/pango-quartz'
 
