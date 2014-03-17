@@ -23,6 +23,8 @@ class InkscapeQuartz < Formula
   depends_on 'acornejo/quartz/gtkmm-quartz'
   depends_on 'acornejo/quartz/librsvg-quartz'
   depends_on 'acornejo/quartz/poppler-quartz'
+  
+  fails_on :clang
 
   def patches
       # fixes glib issues, png issues, clang issues, configure gcc bug & makefile --enable-dynamic flag
@@ -31,7 +33,7 @@ class InkscapeQuartz < Formula
 
   def install
     ENV.x11
-    ENV.prepend 'CXXFLAGS', '-std=c++11'
+    # ENV.prepend 'CXXFLAGS', '-std=c++11'
     args = ["--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"]
     system "./configure", *args
     system "make install"
