@@ -26,11 +26,9 @@ class InkscapeQuartz < Formula
   depends_on 'acornejo/quartz/librsvg-quartz'
   depends_on 'acornejo/quartz/poppler-quartz'
   
-  # fails_with :clang
-
   def install
     ENV.x11
-    # ENV.prepend 'CXXFLAGS', '-std=c++11'
+    ENV.prepend 'CXXFLAGS', '-std=c++11'
     args = ["--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"]
     system "./autogen.sh"
     system "./configure", *args
