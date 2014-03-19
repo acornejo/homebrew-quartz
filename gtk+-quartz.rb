@@ -12,7 +12,6 @@ class GtkxQuartz < Formula
   depends_on 'gdk-pixbuf'
   depends_on 'jasper' => :optional
   depends_on 'atk'
-  depends_on :x11 => '2.3.6'
 
   depends_on 'acornejo/quartz/pango-quartz'
   depends_on 'acornejo/quartz/cairo-quartz'

@@ -8,7 +8,6 @@ class CairommQuartz < Formula
   option :cxx11
 
   depends_on 'pkg-config' => :build
-  depends_on :x11
   if build.cxx11?
     depends_on 'libsigc++' => 'c++11'
   else
@@ -16,6 +15,7 @@ class CairommQuartz < Formula
   end
   depends_on 'acornejo/quartz/cairo-quartz'
 
+  #remove
   def install
     ENV.cxx11 if build.cxx11?
     system "./configure", "--disable-dependency-tracking",

@@ -2,8 +2,8 @@ require 'formula'
 
 class InkscapeQuartz < Formula
   homepage 'http://www.inkscape.org'
-  url "http://bazaar.launchpad.net/~inkscape.dev/inkscape/trunk/", :revision => '12219', :using => :bzr
-  version 'trunk-r12219'
+  url "http://bazaar.launchpad.net/~inkscape.dev/inkscape/trunk/", :revision => '13165', :using => :bzr
+  version 'trunk-r13165'
 
   # Inkscape is a meaty bastard.
   depends_on 'pkg-config' => :build
@@ -11,7 +11,6 @@ class InkscapeQuartz < Formula
   depends_on 'boost-build' => :build
   depends_on :autoconf
   depends_on :automake
-  depends_on :x11
   depends_on 'bdw-gc'
   depends_on 'boost'
   depends_on 'gsl'
@@ -27,11 +26,10 @@ class InkscapeQuartz < Formula
   depends_on 'acornejo/quartz/poppler-quartz'
   
   def install
-    ENV.x11
     ENV.prepend 'CXXFLAGS', '-std=c++11'
-    args = ["--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"]
-    system "./autogen.sh"
-    system "./configure", *args
+    ENV.prepend 'LIBS', '-liconv'
+    args = ["--enable-osxapp", "--disable-dependency-tracking", "--prefix=#{prefix}"]
+    system "./autogen.sh && ./configure", *args
     system "make install"
   end
 end
