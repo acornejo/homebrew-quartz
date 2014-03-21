@@ -28,7 +28,7 @@ class InkscapeQuartz < Formula
   def install
     ENV.prepend 'CXXFLAGS', '-std=c++11'
     ENV.prepend 'LIBS', '-liconv'
-    args = ["--enable-osxapp", "--disable-dependency-tracking", "--prefix=#{prefix}"]
+    args = ["--enable-osxapp", "--enable-lcms", "--disable-dependency-tracking", "--prefix=#{prefix}"]
     system "./autogen.sh && ./configure", *args
     system "make install"
   end

@@ -7,7 +7,6 @@ class PangoQuartz < Formula
 
   depends_on 'pkg-config' => :build
   depends_on 'glib'
-  depends_on 'harfbuzz'
   depends_on 'fontconfig'
   depends_on 'acornejo/quartz/cairo-quartz'
 
